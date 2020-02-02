@@ -6,7 +6,7 @@ use Symfony\Component\Console\Application;
 
 set_time_limit(0);
 
-require dirname(__DIR__).'/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 $env = getenv('APP_ENV') ?? 'dev';
 $debug = getenv('APP_DEBUG') ?? 1;
@@ -15,5 +15,9 @@ $kernel = new Kernel($env, (bool)$debug);
 $kernel->boot();
 
 $container = $kernel->getContainer();
+/** @var Application $application */
 $application = $container->get(Application::class);
+['name' => $name, 'version' => $version] = $kernel->loadMetaData();
+$application->setName($name);
+$application->setVersion($version);
 $application->run();

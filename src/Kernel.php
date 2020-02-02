@@ -6,6 +6,7 @@ use App\DependencyInjection\CompilerPass\CollectCommandsToApplicationCompilerPas
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel as OldKernel;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\Yaml\Yaml;
 
 final class Kernel extends OldKernel
 {
@@ -21,6 +22,11 @@ final class Kernel extends OldKernel
 
     protected function build(ContainerBuilder $containerBuilder): void
     {
-        $containerBuilder->addCompilerPass(new CollectCommandsToApplicationCompilerPass);
+        $containerBuilder->addCompilerPass(new CollectCommandsToApplicationCompilerPass());
+    }
+
+    public function loadMetaData(): array
+    {
+        return Yaml::parseFile(__DIR__ . '/../config/application.yml');
     }
 }
