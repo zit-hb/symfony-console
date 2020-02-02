@@ -1,5 +1,4 @@
 {
-  "chmod": "0755",
   "directories": [
     "bin",
     "config",
@@ -24,6 +23,6 @@
   "main": "bin/console",
   "output": "cli.phar",
   "compression": "GZ",
-  "stub": true,
-  "exclude-dev-files": false
+  "exclude-dev-files": false,
+  "exclude-composer-files": false
 }

@@ -6,7 +6,7 @@ use Symfony\Component\Console\Application;
 
 set_time_limit(0);
 
-require __DIR__.'/../vendor/autoload.php';
+require dirname(__DIR__).'/../vendor/autoload.php';
 
 $env = getenv('APP_ENV') ?? 'dev';
 $debug = getenv('DEBUG') ?? true;
