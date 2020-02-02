@@ -9,7 +9,7 @@ set_time_limit(0);
 require dirname(__DIR__).'/../vendor/autoload.php';
 
 $env = getenv('APP_ENV') ?? 'dev';
-$debug = getenv('DEBUG') ?? true;
+$debug = getenv('APP_DEBUG') ?? 1;
 
 $kernel = new Kernel($env, (bool)$debug);
 $kernel->boot();
