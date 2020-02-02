@@ -1,0 +1,29 @@
+{
+  "chmod": "0755",
+  "directories": [
+    "bin",
+    "config",
+    "src"
+  ],
+  "files": [
+    "composer.json",
+    "composer.lock"
+  ],
+  "finder": [
+    {
+      "name": "*",
+      "exclude": ["Tests"],
+      "in": "vendor"
+    },
+    {
+      "name": "*",
+      "exclude": ["log", "cache/dev", "cache/test"],
+      "in": "var"
+    }
+  ],
+  "main": "bin/console",
+  "output": "cli.phar",
+  "compression": "GZ",
+  "stub": true,
+  "exclude-dev-files": false
+}

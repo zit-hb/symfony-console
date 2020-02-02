@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Tests,Kernel.php}'
+
+    Symfony\Component\Console\Application:
+        public: true
+
