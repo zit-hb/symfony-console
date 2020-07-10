@@ -8,8 +8,8 @@ set_time_limit(0);
 
 require __DIR__.'/../vendor/autoload.php';
 
-$env = getenv('APP_ENV') ? getenv('APP_ENV') : 'dev';
-$debug = getenv('APP_DEBUG') ? getenv('APP_DEBUG') : 1;
+$env = getenv('APP_ENV') ? getenv('APP_ENV') : 'prod';
+$debug = getenv('APP_DEBUG') ? getenv('APP_DEBUG') : 0;
 
 $kernel = new Kernel($env, (bool)$debug);
 $kernel->boot();
