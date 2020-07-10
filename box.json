@@ -16,7 +16,7 @@
     },
     {
       "name": "*",
-      "exclude": ["log", "cache/dev", "cache/test"],
+      "exclude": ["log"],
       "in": "var"
     }
   ],
